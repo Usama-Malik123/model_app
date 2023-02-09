@@ -87,6 +87,14 @@ class _LocationScreen extends State<ViewScreen> {
                              size: 30.0,
                                 ),
                           ),
+ TextButton(
+                            onPressed: () { 
+                              throw Exception('Test Crash');
+                             },
+                            child: Icon(Icons.person_add_sharp,
+                             size: 30.0,
+                                ),
+                          ),      
                         ],
                       ),
                     ],

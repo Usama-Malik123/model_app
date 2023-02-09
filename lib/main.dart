@@ -4,13 +4,15 @@ import 'package:model_application/view.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  FirebaseCrashlytics.instance.enableInDevMode = true;
-  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
-  runApp(MyApp());
+  //WidgetsFlutterBinding.ensureInitialized();
+  //FirebaseCrashlytics.instance.enableInDevMode = true;
+  //FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,20 +21,22 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Crash Button Example'),
-        ),
-        body: Center(
-          child: MaterialButton(
-            onPressed: () {
-              // To simulate a crash
-              throw Exception('Test Crash');
-            },
-            child: Text('Test Crash'),
-          ),
-        ),
-      ),
+       home: ViewScreen(),
+      //  Scaffold(
+      //   appBar: AppBar(
+      //     title: Text('Crash Button Example'),
+      //   ),
+      //   body: Center(
+      //     child: MaterialButton(
+      //       onPressed: () {
+      //         // To simulate a crash
+      //         throw Exception('Test Crash');
+      //       },
+      //       child: Text('Test Crash'),
+            
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
